@@ -1,0 +1,16 @@
+applications:
+- name: testebem
+  instances: 1
+  memory: 1024M
+  disk_quota: 1024M
+  routes:
+  - route: testebem.mybluemix.net
+  buildpack: https://github.com/RocketChat/meteor-buildpack-horse.git
+  env:
+    CF_STAGING_TIMEOUT: 60
+    MONGO_URL: mongodb://admin:BTXKLWVYVIECKWEP@sl-us-south-1-portal.11.dblayer.com:25107,sl-us-south-1-portal.9.dblayer.com:25107/admin?ssl=true
+    ROOT_URL: https://testebem.mybluemix.net/
+  services:
+  - availability-monitoring-auto
+  - mongoninarc
+  stack: cflinuxfs2
